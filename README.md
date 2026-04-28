@@ -33,3 +33,10 @@ ownership, and verifiable identity.
 ## Wallet Address
 
 0x20ae5561647cd16dca4d8e78188913101d29781a73f5a402a267b6d4c7f0a7b5
+
+## Deployment
+
+**Network:** Sui Testnet  
+**Package ID:** 0x0968971f80a6c1e1e4c5e9bf714fa3a4dbe9b70b122fd662b4b5e557abe1b7ca  
+**Transaction:** 2tZ41yXLjLp3Hzev1qin5V79fuBhYHe6X8DKaPAw4Y1y  
+**Explorer:** https://suiscan.xyz/testnet/tx/2tZ41yXLjLp3Hzev1qin5V79fuBhYHe6X8DKaPAw4Y1y
