@@ -3,3 +3,13 @@ traces/*
 .trace
 .coverage*
 Pub.*.toml
+sui
+sui-debug
+sui-node
+sui-tool
+sui-bridge
+sui-bridge-cli
+sui-faucet
+sui-test-validator
+move-analyzer
+sui-mainnet-v1.70.2-ubuntu-x86_64.tgz
