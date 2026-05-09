@@ -22,6 +22,7 @@ module glamora_sui::glamora_sui_tests {
                 string::utf8(b"Kuran"),
                 string::utf8(b"High-end Lagos fashion creator redefining African luxury on-chain"),
                 string::utf8(b"Lagos Luxury"),
+                string::utf8(b"blobid-kuran-portfolio-001"),
                 ctx,
             );
         };
@@ -42,6 +43,7 @@ module glamora_sui::glamora_sui_tests {
                 string::utf8(b"Vivi"),
                 string::utf8(b"Urban streetwear creator bringing street culture on-chain"),
                 string::utf8(b"Urban Streetwear"),
+                string::utf8(b"blobid-vivi-portfolio-002"),
                 ctx,
             );
         };
@@ -69,6 +71,7 @@ module glamora_sui::glamora_sui_tests {
                 string::utf8(b"Hers"),
                 string::utf8(b"Ankara and African print creator celebrating heritage through fashion"),
                 string::utf8(b"Ankara & African Print"),
+                string::utf8(b"blobid-hers-portfolio-003"),
                 ctx,
             );
         };
