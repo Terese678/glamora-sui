@@ -11,24 +11,31 @@ It solves the problem of fake or unverifiable creator profiles by permanently
 recording each creator's metadata as a unique Sui object. Once registered,
 a creator's identity is transparent, tamper-proof, and owned by them.
 
+Creator portfolio content is stored off-chain on Walrus. The returned blob ID 
+is saved permanently inside the creator's on-chain profile, connecting their 
+identity and their work in a decentralized and censorship resistant way.
+
 ## What It Does
 
 - Registers fashion creators on-chain with verifiable metadata
 - Each creator gets a unique on-chain object with their own UID
-- Stores: name, bio, fashion category, and wallet address
+- Stores: name, bio, fashion category, wallet address and Walrus portfolio blob ID
+- Broadcasts a CreatorRegistered event on-chain as verifiable proof of registration
 - Verified status starts as false and can be updated later
 
 ## Contract Structure
 
 - `Creator` — the on-chain object holding creator metadata
+- `CreatorRegistered` — event broadcasted when a creator registers
 - `register_creator` — function anyone can call to register
 - `get_name` — read a creator's name
 - `is_verified` — check if a creator is verified
+- `get_portfolio` — fetch the Walrus blob ID linked to the creator's portfolio
 
 ## Sui Stack Layer
 
-This contract uses the **Sui On-Chain Layer** handling trusted state,
-ownership, and verifiable identity.
+This contract uses the **Sui On-Chain Layer** for trusted state, ownership 
+and verifiable identity, and **Walrus** for decentralized off-chain portfolio storage.
 
 ## Wallet Address
 
@@ -37,6 +44,6 @@ ownership, and verifiable identity.
 ## Deployment
 
 **Network:** Sui Testnet  
-**Package ID:** 0x0968971f80a6c1e1e4c5e9bf714fa3a4dbe9b70b122fd662b4b5e557abe1b7ca  
-**Transaction:** 2tZ41yXLjLp3Hzev1qin5V79fuBhYHe6X8DKaPAw4Y1y  
-**Explorer:** https://suiscan.xyz/testnet/tx/2tZ41yXLjLp3Hzev1qin5V79fuBhYHe6X8DKaPAw4Y1y
+**Package ID:** 0x309d31d8ea039f34e27bb5912413cec6a1ef9e6b4643e59999a599743cc41457  
+**Transaction:** C6noVGViiqHFnjmsVCQo4HTN49RsqDjm1XyRiDMs1w8v  
+**Explorer:** https://suiscan.xyz/testnet/tx/C6noVGViiqHFnjmsVCQo4HTN49RsqDjm1XyRiDMs1w8v
