@@ -15,6 +15,10 @@ Creator portfolio content is stored off-chain on Walrus. The returned blob ID
 is saved permanently inside the creator's on-chain profile, connecting their 
 identity and their work in a decentralized and censorship resistant way.
 
+Premium portfolio content is protected by Seal. Only a verified Glamora enclave 
+can satisfy the seal_approve policy, ensuring that exclusive creator content is 
+only accessible to legitimate subscribers.
+
 ## What It Does
 
 - Registers fashion creators on-chain with verifiable metadata
@@ -22,6 +26,7 @@ identity and their work in a decentralized and censorship resistant way.
 - Stores: name, bio, fashion category, wallet address and Walrus portfolio blob ID
 - Broadcasts a CreatorRegistered event on-chain as verifiable proof of registration
 - Verified status starts as false and can be updated later
+- Protects premium portfolio access using Seal access control policy
 
 ## Contract Structure
 
@@ -31,11 +36,13 @@ identity and their work in a decentralized and censorship resistant way.
 - `get_name` — read a creator's name
 - `is_verified` — check if a creator is verified
 - `get_portfolio` — fetch the Walrus blob ID linked to the creator's portfolio
+- `seal_approve` — verifies enclave signature and approves premium content access
 
 ## Sui Stack Layer
 
 This contract uses the **Sui On-Chain Layer** for trusted state, ownership 
-and verifiable identity, and **Walrus** for decentralized off-chain portfolio storage.
+and verifiable identity, **Walrus** for decentralized off-chain portfolio storage,
+and **Seal** for encrypted access control over premium creator content.
 
 ## Wallet Address
 
@@ -44,6 +51,7 @@ and verifiable identity, and **Walrus** for decentralized off-chain portfolio st
 ## Deployment
 
 **Network:** Sui Testnet  
-**Package ID:** 0x309d31d8ea039f34e27bb5912413cec6a1ef9e6b4643e59999a599743cc41457  
-**Transaction:** C6noVGViiqHFnjmsVCQo4HTN49RsqDjm1XyRiDMs1w8v  
-**Explorer:** https://suiscan.xyz/testnet/tx/C6noVGViiqHFnjmsVCQo4HTN49RsqDjm1XyRiDMs1w8v
+**Package ID:** 0x18bc0adc9c7ccbfd9c589989d7842a11dbc1361ef03fb269ac029a71369dfad2  
+**Transaction:** 5d8SKLPY1NUGn36WAWbvYixjXDQc43BPbgsJA6YExVoB  
+**Explorer:** https://suiscan.xyz/testnet/tx/5d8SKLPY1NUGn36WAWbvYixjXDQc43BPbgsJA6YExVoB  
+**Modules:** glamora_sui, seal_policy
